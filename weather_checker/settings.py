@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from datetime import timedelta
 
 load_dotenv()
 
@@ -160,3 +161,6 @@ SWAGGER_SETTINGS = {
         }
     },
 }
+
+OWM_API_KEY = os.environ.get('OWM_API_KEY', None)
+WEATHER_DATA_LIFETIME = timedelta(hours=4)
